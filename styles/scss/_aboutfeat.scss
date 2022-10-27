@@ -1,0 +1,132 @@
+.aboutfeat {
+  background-color: $lightGrayishBlue;
+  text-align: center;
+  margin-top: 5%;
+
+  &__content {
+    background: url("../../src/img/aboutbanner.min.jpg");
+    background-size: cover;
+    background-position: 0% 70%;
+    width: 100%;
+
+    @include breakpoint-down(medium) {
+      background: none;
+    }
+  }
+
+  @include breakpoint-up(medium) {
+    text-align: center;
+  }
+
+  &__intro {
+    margin-bottom: 3.75rem;
+    text-align: center;
+
+    @include breakpoint-up(large) {
+      width: 100%;
+    }
+  }
+
+  &__grid {
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+
+    @include breakpoint-up(large) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__item {
+    padding: 0.9375rem;
+
+    @include breakpoint-up(medium) {
+      flex: 0 0 50%;
+    }
+
+    @include breakpoint-up(large) {
+      flex: 1;
+    }
+  }
+
+  &__icon {
+    margin-bottom: 1.875rem;
+
+    @include breakpoint-up(large) {
+      margin-bottom: 2.75rem;
+    }
+  }
+
+  &__title {
+    font-size: 1.25rem;
+    font-weight: 300;
+    line-height: 1.15;
+    color: $white;
+    margin-bottom: 1rem;
+
+    @include breakpoint-up(large) {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &__description {
+    color: $white;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}
+
+.mobileCards {
+  padding: 0.9375rem;
+
+  @include breakpoint-down(medium) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  @include breakpoint-up(large) {
+    flex: 1;
+  }
+}
+
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 4px 6px 8px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  background: linear-gradient($b0, $b2 80%);
+  transition: 0.3s;
+  padding: 0.9375rem;
+
+  h3 {
+    color: $white;
+    padding-top: 10%;
+  }
+
+  p {
+    color: $white;
+  }
+
+  @include breakpoint-down(medium) {
+    width: 100%;
+    margin-bottom: 15%;
+  }
+
+  @include breakpoint-up(medium) {
+    flex: 0 0 50%;
+  }
+
+  @include breakpoint-up(large) {
+    flex: 1;
+  }
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Add some padding inside the card container */
+// .container {
+//   padding: 2px 16px;
+// }

@@ -1,0 +1,184 @@
+.rent {
+  margin-bottom: 4rem;
+  &__content {
+    text-align: center;
+
+    @include breakpoint-up(medium) {
+      text-align: left;
+    }
+    @include breakpoint-down(medium) {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  &__left {
+    width: 100%;
+    margin-bottom: 5rem;
+
+    @include breakpoint-up(large) {
+      width: 40%;
+      margin: 0;
+    }
+  }
+
+  &__right {
+    width: 100%;
+    padding-top: 3%;
+    background: url("../../src/img/rentImg.min.jpg");
+    box-shadow: 4px 6px 8px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    transition: all 500ms ease-in-out;
+    background-size: cover;
+    background-position: center center;
+
+    @include breakpoint-up(large) {
+      width: 55%;
+      margin: 0;
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+
+    @include breakpoint-down(medium) {
+      background: none;
+    }
+
+    h1 {
+      color: $grayishBlue;
+      // background-color: rgba(0, 0, 0, 0.3)
+      text-align: center;
+
+      @include breakpoint-down(medium) {
+        color: $black3;
+        background-color: $lightGrayishBlue;
+      }
+    }
+    span {
+      color: $white;
+
+      @include breakpoint-down(medium) {
+        color: $b0;
+      }
+    }
+  }
+
+  &__cta {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    @include breakpoint-up(medium) {
+      flex-direction: row;
+    }
+  }
+
+  /*  PRIMARY CTA  */
+  .primaryCta {
+    position: relative;
+    overflow: hidden;
+    width: max-content;
+    // margin-top: 1rem;
+    @include breakpoint-up(medium) {
+      margin-right: 3rem;
+    }
+
+    @include breakpoint-down(medium) {
+      margin-bottom: 5%;
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    a {
+      color: $white;
+    }
+  }
+
+  .primaryCta button {
+    padding: 1rem 2rem;
+    background: linear-gradient(to right, $darkBlue, $navGrayishBlue);
+    color: $white;
+    cursor: pointer;
+    border: none;
+  }
+
+  button {
+    font-size: $font-lg;
+    line-height: 120%;
+  }
+
+  button:focus {
+    outline: none;
+  }
+
+  .primaryCta::before {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: -25px;
+    left: -25px;
+    background-color: $lightGrayishBlue;
+    transform: rotate(45deg);
+  }
+
+  .primaryCta::after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: $lightGrayishBlue;
+    transform: rotate(45deg);
+    right: -25px;
+    bottom: -25px;
+  }
+
+  /*  SECONDARY CTA */
+  .secondaryCta {
+    position: relative;
+    overflow: hidden;
+    width: max-content;
+    // margin-top: 16px;
+
+    &:hover {
+      opacity: 0.6;
+    }
+
+    a {
+      color: $darkBlue;
+    }
+  }
+
+  .secondaryCta button {
+    padding: 16px 32px;
+    background-color: transparent;
+    cursor: pointer;
+    border: 2px $b0 solid;
+  }
+
+  .secondaryCta::before {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: -25px;
+    left: -25px;
+    background-color: $lightGrayishBlue;
+    transform: rotate(45deg);
+    border: 2px $b1 solid;
+  }
+
+  .secondaryCta::after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: $lightGrayishBlue;
+    transform: rotate(45deg);
+    right: -25px;
+    bottom: -25px;
+    border: 2px $b1 solid;
+  }
+}

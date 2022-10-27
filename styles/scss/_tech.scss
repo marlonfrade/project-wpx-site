@@ -1,0 +1,56 @@
+.tech {
+  background-color: $lightGrayishBlue;
+  padding-bottom: 0rem;
+
+  &__content {
+    text-align: center;
+
+    @include breakpoint-up(medium) {
+      text-align: left;
+    }
+    @include breakpoint-down(medium) {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    img {
+      width: 90%;
+      padding-top: 2rem;
+
+      @include breakpoint-up(large) {
+        width: 70%;
+      }
+
+      @include breakpoint-down(medium) {
+        width: 70%;
+      }
+    }
+
+    li {
+      padding-bottom: 7%;
+    }
+  }
+
+  &__left {
+    width: 100%;
+    margin-bottom: 3rem;
+
+    @include breakpoint-up(large) {
+      width: 40%;
+      margin: 0;
+    }
+  }
+
+  &__right {
+    width: 100%;
+
+    @include breakpoint-up(large) {
+      width: 50%;
+      margin: 0;
+    }
+
+    h1 {
+      color: $darkBlue;
+    }
+  }
+}

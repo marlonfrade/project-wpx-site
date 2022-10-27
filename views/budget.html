@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="WPX Locação e Logística" />
+    <meta name="keywords" content="HTML, CSS, JavaScript" />
+    <meta name="author" content="WPX" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;300;400&display=swap" rel="stylesheet" />
+
+    <!-- Link SASS style -->
+    <link rel="stylesheet" href="/styles/scss/style.css" />
+
+    <title>WPX Locação e Logística</title>
+    <link rel="icon" href="/src/svg/Logo.min.svg" />
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="overlay has-fade"></div>
+
+        <nav id="nav" class="container container--nav flex flex-jc-sb flex-ai-c">
+            <a href="/" class="header__logo">
+                <img src="../src/img/Logo.min.jpg" alt="Logo" />
+            </a>
+
+            <a id="btnHamburger" href="#" class="header__toggle hide-for-desktop">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+
+            <div class="header__links hide-for-mobile">
+                <a href="../index.html">Home</a>
+                <a href="../index.html#rent">Locação</a>
+                <a href="../index.html#logistics">Logística</a>
+                <a href="../index.html#tech">Tecnologia</a>
+                <a href="../index.html#about">Quem somos</a>
+                <a href="../index.html#sustentabilidade">Sustentabilidade</a>
+                <a onclick="window.location.href='/public/codigo.pdf'">Código de conduta ética</a>
+            </div>
+            <a href="../index.html" class="hide-for-mobile">
+                <div class="primaryCta">
+                    <button aria-label="ir para formulário">Voltar ao Site</button>
+                </div>
+            </a>
+        </nav>
+
+        <div mobile class="header__menu has-fade">
+            <a href="../index.html" onclick="hamMenu()">Home</a>
+            <a href="../index.html#rent" onclick="hamMenu()">Locação</a>
+            <a href="../index.html#logistics" onclick="hamMenu()">Logística</a>
+            <a href="../index.html#tech" onclick="hamMenu()">Tecnologia</a>
+            <a href="../index.html#about" onclick="hamMenu()">Quem somos</a>
+            <a href="../index.html#sustentabilidade" onclick="hamMenu()">Sustentabilidade</a>
+            <a onclick="window.location.href='/public/codigo.pdf'">Código de conduta ética</a>
+            <a href="../index.html">Voltar ao Site</a>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero__budgetBg">
+                <div class="hero__budgetTxt container--pall fade-in">
+                    <h1>Solicite um Orçamento</h1>
+                    <p>
+                        Equipe especializada, com larga experiência e com Know How em
+                        terceirização de frota, a WPX conta com equipamentos modernos, e
+                        com uma equipe responsável treinada para atuar nas manutenções
+                        preventivas, na elaboração de projetos e dimensionamento de frotas
+                        para o cliente, o que proporcionará alta performance e maior
+                        segurança.
+                    </p>
+                </div>
+                <div class="hero__icons flex flex-jc-sb">
+                    <a href="https://wa.me/5547992711360?text=Olá%20Gostaria%20de%20solicitar%20um%20orçamento!%20poderia%20me%20ajudar?"
+                        class="icon3" target="_blank">
+                        <img src="../src/svg/Whatsapp.min.svg" alt="whatsapp" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section budgetSection class="budget">
+        <div class="container container--pall">
+            <h2>Orçamento</h2>
+            <p class="description">
+                Preencha os campos abaixo para que possamos lhe enviar um orçamento
+                personalizado. Clique nos Botões abaixo para expandir/fechar as
+                opções.
+            </p>
+
+            <div myModal id="myModal" class="modal">
+                <div modal-content class="modal-content">
+                    <span closeModels class="closeModal">&times;</span>
+                    <ul models></ul>
+                </div>
+            </div>
+
+            <div modalItens class="modal-itens">
+                <!-- Modal content -->
+                <div class="modal-content-itens">
+                    <span closeItens class="closeModal">&times;</span>
+                    <div id="addItens"></div>
+                    <div id="viewItens">
+                        <table table>
+                            <tr>
+                                <th>Grupo</th>
+                                <th>Modelo</th>
+                                <th>Quantidade</th>
+                                <th>Opçōes</th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 1 -->
+            <button accordion1 class="accordion">1 - Equipamentos</button>
+            <div class="panel noscroll">
+                <div class="container container--pall noscroll">
+                    <div class="flex flex-jc-sb">
+                        <h2>Equipamentos</h2>
+                        <span id="openList" class="openSide hide"> Ver Selecionados</span>
+                    </div>
+                    <div class="budget__grid">
+                        <!-- Item 1 -->
+                        <div item href="#" class="budget__item">
+                            <div image class="budget__image" style="background-image: url(/src/img/maquinas.min.jpg)">
+                            </div>
+                            <div select id="addMaquinas" class="budget__select flex">
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="budget__text">
+                                <div title class="budget__title">Máquinas</div>
+                                <div subtitle class="budget__subtitle">
+                                    Imagens meramente ilustrativas. Veja Nossos modelos.
+                                </div>
+
+                                <div class="budget__description">
+                                    <button myBtn id="maquinasBtn" class="collapsible">
+                                        Ver Modelos
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Fim do Item 1 -->
+                        <!-- Item 2 -->
+                        <div item href="#" class="budget__item">
+                            <div class="budget__image" style="background-image: url(/src/img/caminhoes.min.jpg)"></div>
+                            <div select id="addCaminhoes" class="budget__select flex">
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="budget__text">
+                                <div title class="budget__title">Caminhōes</div>
+                                <div subtitle class="budget__subtitle">
+                                    Imagens meramente ilustrativas. Veja Nossos modelos.
+                                </div>
+
+                                <div class="budget__description">
+                                    <button myBtn id="caminhoesBtn" class="collapsible">
+                                        Ver Modelos
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Fim do Item 2 -->
+                        <!-- Item 3 -->
+                        <div item href="#" class="budget__item">
+                            <div class="budget__image" style="background-image: url(/src/img/implementosbg.min.png)">
+                            </div>
+                            <div select id="addEquipamentos" class="budget__select flex">
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="budget__text">
+                                <div title class="budget__title">Implementos</div>
+                                <div subtitle class="budget__subtitle">
+                                    Imagens meramente ilustrativas. Veja Nossos modelos.
+                                </div>
+
+                                <div class="budget__description">
+                                    <button myBtn id="equipamentosBtn" class="collapsible">
+                                        Ver Modelos
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Fim do Item 3 -->
+                        <!-- Item 4 -->
+                        <div item href="#" class="budget__item">
+                            <div class="budget__image" style="background-image: url(/src/img/passeio.min.jpg)"></div>
+                            <div select id="addPasseio" class="budget__select flex">
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="budget__text">
+                                <div title class="budget__title">Veículos</div>
+                                <div subtitle class="budget__subtitle">
+                                    Imagens meramente ilustrativas. Veja Nossos modelos.
+                                </div>
+
+                                <div class="budget__description">
+                                    <button myBtn id="passeioBtn" class="collapsible">
+                                        Ver Modelos
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Fim do Item 4 -->
+                    </div>
+                </div>
+            </div>
+            <!-- Section 2 -->
+            <button accordion2 class="accordion">2 - Localização e Período</button>
+            <div panel class="panel">
+                <div class="budget__location container container--px">
+                    <h2>Localização e Período</h2>
+                    <div class="budget__grid">
+                        <div></div>
+
+                        <!-- Item 1 -->
+                        <div class="budget__item">
+                            <div class="budget__map" style="background-image: url(/src/img/brazilMap.min.png)"></div>
+                            <div class="budget__point">
+                                <div class="pin"></div>
+                                <div class="pulse"></div>
+                            </div>
+                            <div class="budget__text">
+                                <div class="budget__title">Localização</div>
+                                <div class="budget__subtitle">
+                                    Onde o serviço será realizado?
+                                </div>
+
+                                <div class="budget__description">
+                                    <div class="flex flex-jc-sb">
+                                        <select id="state" name="state">
+                                            <option value="">Estado</option>
+                                            <option value="AC">Acre</option>
+                                            <option value="AL">Alagoas</option>
+                                            <option value="AP">Amapá</option>
+                                            <option value="AM">Amazonas</option>
+                                            <option value="BA">Bahia</option>
+                                            <option value="CE">Ceará</option>
+                                            <option value="DF">Distrito Federal</option>
+                                            <option value="ES">Espírito Santo</option>
+                                            <option value="GO">Goiás</option>
+                                            <option value="MA">Maranhão</option>
+                                            <option value="MT">Mato Grosso</option>
+                                            <option value="MS">Mato Grosso do Sul</option>
+                                            <option value="MG">Minas Gerais</option>
+                                            <option value="PA">Pará</option>
+                                            <option value="PB">Paraíba</option>
+                                            <option value="PR">Paraná</option>
+                                            <option value="PE">Pernambuco</option>
+                                            <option value="PI">Piauí</option>
+                                            <option value="RJ">Rio de Janeiro</option>
+                                            <option value="RN">Rio Grande do Norte</option>
+                                            <option value="RS">Rio Grande do Sul</option>
+                                            <option value="RO">Rondônia</option>
+                                            <option value="RR">Roraima</option>
+                                            <option value="SC">Santa Catarina</option>
+                                            <option value="SP">São Paulo</option>
+                                            <option value="SE">Sergipe</option>
+                                            <option value="TO">Tocantins</option>
+                                            <!-- <option value="EX">Estrangeiro</option> -->
+                                        </select>
+
+                                        <input type="text" id="city" required placeholder="Cidade*" />
+                                    </div>
+                                    <div class="budget__title">Período</div>
+                                    <div class="budget__subtitle">
+                                        Quanto tempo será utilizado?
+                                    </div>
+
+                                    <div class="period">
+                                        <div class="flex flex-jc-sb">
+                                            <input id="period" type="number" min="1" max="100" required
+                                                placeholder="Qtd." />
+                                            <select name="period" id="periodType">
+                                                <option value="D">Dias</option>
+                                                <option value="M">Meses</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <label for="noTime">
+                                        Não sei o período.
+                                        <input id="noPeriod" type="checkbox" />
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Fim do Item 1 -->
+                    </div>
+                </div>
+            </div>
+
+            <button accordion3 class="accordion">3 - Dados Pessoais</button>
+            <div class="panel">
+                <div class="budget__information container container--px">
+                    <h1>Dados Pessoais</h1>
+                    <p>
+                        Nos informe seus dados para que possamos lhe enviar uma proposta
+                        personalizada
+                    </p>
+
+                    <label for="name">Nome</label>
+                    <input type="text" name="name" id="name" required />
+
+                    <label for="email">Email</label>
+                    <input type="text" name="email" id="email" required />
+
+                    <label for="phone">Telefone para Contato(com DDD)</label>
+                    <input type="text" name="phone" id="phone" required />
+                </div>
+            </div>
+            <div budget class="primaryCta">
+                <button>Solicitar orçamento</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__logo logo">
+                <a href="#">
+                    <img src="../src/svg/logofooter.min.svg" />
+                </a>
+                <div class="primaryCta">
+                    <button aria-label="ir para formulário">
+                        <a href="/views/budget.html">Solicitar orçamento</a>
+                    </button>
+                </div>
+            </div>
+
+            <div class="footer__social social"></div>
+
+            <div class="footer__cta cta"></div>
+
+            <div class="footer__location location1">
+                <h3>Endereço</h3>
+                <ul>
+                    <li>
+                        <a href="https://goo.gl/maps/mUybLf3JV6sQ57jr5" target="_blank">
+                            Palmas/TO. Av. Juscelino Kubitschek , 147, Sala 08 B, Plano
+                            diretor Norte - CEP: 7001-014.
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://goo.gl/maps/p9VqmUdGeKGxJw6t7" target="_blank">São Paulo/SP. Rua Joaquim
+                            Floriano, 466, cj 2305, Itaim bibi -
+                            CEP: 04534-011</a>
+                    </li>
+                    <li>
+                        <a href="https://goo.gl/maps/8YjvFuqRo2JnL3Mh6" target="_blank">
+                            Itajaí/SC. Av. Osvaldo Reis, 3281, Sala 2001 Riviera Business
+                            Praia Brava- CEP: 88306‒773.</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__location location2"></div>
+
+            <div class="footer__contact contact">
+                <h3>Contatos</h3>
+                <h4>
+                    (47) 3514-0558 <br />(49) 99171-7199 <br />
+                    contato@wpxlocacao.com.br
+                </h4>
+                <a href="https://www.linkedin.com/company/wpx/" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48px" height="48px">
+                        <path fill="#0288D1"
+                            d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5V37z" />
+                        <path fill="#FFF"
+                            d="M12 19H17V36H12zM14.485 17h-.028C12.965 17 12 15.888 12 14.499 12 13.08 12.995 12 14.514 12c1.521 0 2.458 1.08 2.486 2.499C17 15.887 16.035 17 14.485 17zM36 36h-5v-9.099c0-2.198-1.225-3.698-3.192-3.698-1.501 0-2.313 1.012-2.707 1.99C24.957 25.543 25 26.511 25 27v9h-5V19h5v2.616C25.721 20.5 26.85 19 29.738 19c3.578 0 6.261 2.25 6.261 7.274L36 36 36 36z" />
+                    </svg>
+                </a>
+
+                <a href="https://www.instagram.com/wpxlocacao/" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48px" height="48px">
+                        <radialGradient id="yOrnnhliCrdS2gy~4tD8ma" cx="19.38" cy="42.035" r="44.899"
+                            gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#fd5" />
+                            <stop offset=".328" stop-color="#ff543f" />
+                            <stop offset=".348" stop-color="#fc5245" />
+                            <stop offset=".504" stop-color="#e64771" />
+                            <stop offset=".643" stop-color="#d53e91" />
+                            <stop offset=".761" stop-color="#cc39a4" />
+                            <stop offset=".841" stop-color="#c837ab" />
+                        </radialGradient>
+                        <path fill="url(#yOrnnhliCrdS2gy~4tD8ma)"
+                            d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z" />
+                        <radialGradient id="yOrnnhliCrdS2gy~4tD8mb" cx="11.786" cy="5.54" r="29.813"
+                            gradientTransform="matrix(1 0 0 .6663 0 1.849)" gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#4168c9" />
+                            <stop offset=".999" stop-color="#4168c9" stop-opacity="0" />
+                        </radialGradient>
+                        <path fill="url(#yOrnnhliCrdS2gy~4tD8mb)"
+                            d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z" />
+                        <path fill="#fff"
+                            d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z" />
+                        <circle cx="31.5" cy="16.5" r="1.5" fill="#fff" />
+                        <path fill="#fff"
+                            d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z" />
+                    </svg>
+                </a>
+            </div>
+
+            <div class="footer__form form">
+                <!-- <label for="name">Cadastre-se para receber nossas ofertas</label>
+          <input type="text" name="name" id="name" placeholder="Nome" />
+          <input type="email" name="email" id="email" placeholder="Email" />
+          <button type="submit">Cadastre-se</button> -->
+            </div>
+        </div>
+        <div class="footer__copyright copyright">
+            &copy; WPX. <br />
+            Todos os Direitos Reservados.
+        </div>
+        <div class="footer__copyright copyright">Powered By MonkeyBranch</div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"
+        integrity="sha512-SGWgwwRA8xZgEoKiex3UubkSkV1zSE1BS6O4pXcaxcNtUlQsOmOmhVnDwIvqGRfEmuz83tIGL13cXMZn6upPyg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="../helpers/machines.js"></script>
+    <script src="../scripts/budget/addMachines.js"></script>
+    <script src="../scripts/budget/getMachines.js"></script>
+    <script src="../scripts/budget/index.js"></script>
+</body>
+
+</html>

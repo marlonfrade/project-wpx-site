@@ -1,0 +1,96 @@
+.techfeat {
+  background-color: $lightGrayishBlue;
+  text-align: center;
+
+  &__content {
+    background: url("../../src/img/bgTech.min.jpg");
+    background-size: cover;
+    background-position: 0% 30%;
+  }
+
+  @include breakpoint-up(medium) {
+    text-align: left;
+  }
+
+  &__intro {
+    margin-bottom: 3.75rem;
+    text-align: center;
+
+    @include breakpoint-up(large) {
+      width: 100%;
+    }
+  }
+
+  &__grid {
+    @include breakpoint-up(medium) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__item {
+    padding: 0.9375rem;
+
+    @include breakpoint-up(medium) {
+      flex: 0 0 50%;
+    }
+
+    @include breakpoint-up(large) {
+      flex: 1;
+    }
+  }
+
+  &__icon {
+    margin-bottom: 0.875rem;
+
+    @include breakpoint-up(large) {
+      margin-bottom: 1.75rem;
+    }
+
+    h2 {
+      color: $white;
+    }
+  }
+
+  &__title {
+    font-size: 1.25rem;
+    font-weight: 300;
+    line-height: 1.15;
+    color: $white;
+    margin-bottom: 1rem;
+
+    @include breakpoint-up(large) {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &__description {
+    color: $white;
+    font-size: 1rem;
+    line-height: 2;
+    width: 35%;
+
+    @include breakpoint-down(medium) {
+      width: 100%;
+    }
+
+    button {
+      padding: 1rem 2rem;
+      background-color: transparent;
+      cursor: pointer;
+      border: 2px $white solid;
+      border-radius: 15px;
+      color: $white;
+      font-size: $font-med;
+      transition: all 300ms ease-in-out;
+      a {
+        color: $white;
+      }
+      &:hover {
+        background-color: $white;
+        color: $b0;
+      }
+    }
+  }
+}

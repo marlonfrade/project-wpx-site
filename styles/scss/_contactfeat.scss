@@ -1,0 +1,172 @@
+.contactfeat {
+  background-color: $lightGrayishBlue;
+  text-align: center;
+
+  &__content {
+    background: url("../../src/img/contactbg.min.jpg");
+    background-size: cover;
+    background-position: 0% 50%;
+  }
+
+  @include breakpoint-up(medium) {
+    text-align: left;
+  }
+
+  &__intro {
+    margin-bottom: 3.75rem;
+    text-align: center;
+
+    @include breakpoint-up(large) {
+      width: 100%;
+    }
+  }
+
+  &__grid {
+    @include breakpoint-up(medium) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__item {
+    padding: 0.9375rem;
+
+    @include breakpoint-up(medium) {
+      flex: 0 0 50%;
+    }
+
+    @include breakpoint-up(large) {
+      flex: 1;
+    }
+  }
+
+  &__icon {
+    margin-bottom: 1.875rem;
+
+    @include breakpoint-up(large) {
+      margin-bottom: 2.75rem;
+    }
+  }
+
+  &__title {
+    font-size: 1.25rem;
+    font-weight: 300;
+    line-height: 1.15;
+    color: $white;
+    margin-bottom: 1rem;
+
+    @include breakpoint-up(large) {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &__description {
+    color: $white;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  h1 {
+    color: $white;
+  }
+  /*  PRIMARY CTA  */
+  .primaryCta {
+    position: relative;
+    overflow: hidden;
+    width: max-content;
+    // margin-top: 1rem;
+    @include breakpoint-up(medium) {
+      margin-right: 3rem;
+      width: 100%;
+    }
+
+    @include breakpoint-down(medium) {
+      margin-bottom: 10%;
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  .primaryCta button {
+    padding: 1rem 2rem;
+    background: $white;
+    color: $darkBlue;
+    cursor: pointer;
+    border: none;
+  }
+
+  button {
+    font-size: $font-lg;
+    line-height: 120%;
+    color: $darkBlue;
+    border-radius: 15px;
+  }
+
+  button:focus {
+    outline: none;
+  }
+
+  .primaryCta::before {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: -25px;
+    left: -25px;
+    background-color: none;
+    transform: rotate(45deg);
+  }
+
+  .primaryCta::after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: none;
+    transform: rotate(45deg);
+    right: -25px;
+    bottom: -25px;
+  }
+
+  /*  SECONDARY CTA */
+  .secondaryCta {
+    position: relative;
+    overflow: hidden;
+    width: max-content;
+    // margin-top: 16px;
+  }
+
+  .secondaryCta button {
+    padding: 16px 32px;
+    background-color: transparent;
+    cursor: pointer;
+    border: 1px linear-gradient(to right, $darkBlue, $navGrayishBlue) solid;
+  }
+
+  .secondaryCta::before {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: -25px;
+    left: -25px;
+    background-color: $white;
+    transform: rotate(45deg);
+    border: 2px $b1 solid;
+  }
+
+  .secondaryCta::after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: $white;
+    transform: rotate(45deg);
+    right: -25px;
+    bottom: -25px;
+    border: 2px $b1 solid;
+  }
+}

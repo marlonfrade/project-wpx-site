@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="WPX Locação e Logística" />
+    <meta name="keywords" content="HTML, CSS, JavaScript" />
+    <meta name="author" content="WPX" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;300;400&display=swap" rel="stylesheet" />
+
+    <!-- Link CSS style -->
+    <link rel="stylesheet" href="/styles/scss/style.css" />
+
+    <title>WPX Locação e Logística</title>
+    <link rel="icon" href="/src/svg/Logo.min.svg" />
+</head>
+
+<body>
+    <header class="header">
+        <div class="overlay has-fade"></div>
+
+        <nav id="nav" class="container container--nav flex flex-jc-sb flex-ai-c">
+            <a href="/" class="header__logo">
+                <img src="../src/img/Logo.min.jpg" alt="Logo" />
+            </a>
+
+            <a id="btnHamburger" href="#" class="header__toggle hide-for-desktop">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+
+            <div class="header__links hide-for-mobile">
+                <a href="../index.html">Home</a>
+                <a href="../index.html">Locação</a>
+                <a href="../index.html">Logística</a>
+                <a href="../index.html">Tecnologia</a>
+                <a href="../index.html">Sustentabilidade</a>
+                <a href="../index.html">Quem somos</a>
+                <a onclick="window.location.href='/public/codigo.pdf'">Código de conduta ética</a>
+            </div>
+
+            <a href="../index.html" class="hide-for-mobile">
+                <div class="primaryCta">
+                    <button aria-label="ir para formulário">Voltar ao Site</button>
+                </div>
+            </a>
+        </nav>
+
+        <div mobile class="header__menu has-fade">
+            <a href="../index.html" onclick="hamMenu()">Home</a>
+            <a href="../index.html" onclick="hamMenu()">Locação</a>
+            <a href="../index.html" onclick="hamMenu()">Logística</a>
+            <a href="../index.html" onclick="hamMenu()">Tecnologia</a>
+            <a href="../index.html" onclick="hamMenu()">Sustentabilidade</a>
+            <a href="../index.html" onclick="hamMenu()">Quem somos</a>
+            <a onclick="window.location.href='/public/codigo.pdf'">Código de conduta ética</a>
+            <a href="h.html">Voltar ao Site</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container client">
+            <div class="hero__client"></div>
+
+            <div class="hero__content container--pall">
+                <h1>WPX é força de Inovação</h1>
+
+                <p>
+                    Obrigado por fazer parte dessa força! Nosso time agora está
+                    providenciando um Orçamento Exclusivo para lhe atender. Em breve
+                    estaremos entrando em contato através dos seus dados.
+                </p>
+
+                <p>
+                    Volte para a tela inicial ou tire suas dúvidas através do nosso
+                    WhatsApp.
+                </p>
+
+                <div class="hero__iconsComing flex flex-jc-c">
+                    <a href="../index.html" class="icon3">
+                        <div class="arrow-down">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </a>
+
+                    <a href="https://wa.me/5551999886410?text=Olá%20Gostaria%20de%20solicitar%20um%20orçamento!%20poderia%20me%20ajudar?"
+                        class="icon4" target="_blank">
+                        <img src="../src/svg/Whatsapp.min.svg" alt="whatsapp" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

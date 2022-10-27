@@ -1,0 +1,151 @@
+.logistic {
+  background-color: $white;
+  &__content {
+    text-align: center;
+
+    @include breakpoint-up(medium) {
+      text-align: left;
+    }
+    @include breakpoint-down(medium) {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    img {
+      width: 90%;
+      padding-top: 2rem;
+
+      @include breakpoint-up(large) {
+        width: 90%;
+      }
+
+      @include breakpoint-down(medium) {
+        width: 70%;
+      }
+    }
+  }
+
+  &__left {
+    width: 100%;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    background: url("../../src/img/logisticsBG1.min.jpg");
+    box-shadow: 4px 6px 8px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    transition: all 500ms ease-in-out;
+    background-size: cover;
+    background-position: center center;
+
+    @include breakpoint-up(large) {
+      width: 50%;
+      margin: 0;
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+
+    @include breakpoint-down(medium) {
+      background: none;
+      margin-bottom: 10%;
+      background-color: $lightGrayishBlue;
+    }
+
+    h1 {
+      color: $grayishBlue;
+      background-color: rgba(0, 0, 0, 0.3);
+      text-align: center;
+
+      @include breakpoint-down(medium) {
+        color: $black3;
+        background-color: $lightGrayishBlue;
+      }
+    }
+    span {
+      color: $white;
+
+      @include breakpoint-down(medium) {
+        color: $b0;
+      }
+    }
+  }
+
+  &__right {
+    width: 100%;
+
+    @include breakpoint-up(large) {
+      width: 45%;
+      margin: 0;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    span {
+      color: $darkBlue;
+    }
+  }
+
+  &__cta {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    @include breakpoint-up(medium) {
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    @include breakpoint-down(medium) {
+      padding-left: 30%;
+    }
+  }
+
+  /*  SECONDARY CTA */
+  .secondaryCta {
+    position: relative;
+    overflow: hidden;
+    width: max-content;
+    margin-top: 1rem;
+
+    a {
+      font-size: $font-med;
+      color: $b0;
+    }
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
+  .secondaryCta button {
+    padding: 1.5rem 3rem;
+    background-color: transparent;
+    cursor: pointer;
+    border: 2px $b0 solid;
+  }
+
+  .secondaryCta::before {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: -25px;
+    left: -25px;
+    background-color: $white;
+    transform: rotate(45deg);
+    border: 2px $b1 solid;
+  }
+
+  .secondaryCta::after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: $white;
+    transform: rotate(45deg);
+    right: -25px;
+    bottom: -25px;
+    border: 2px $b1 solid;
+  }
+}

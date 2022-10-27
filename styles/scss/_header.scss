@@ -1,0 +1,198 @@
+.header {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  background-color: $white;
+  box-shadow: 0px 0px 15px 3px hsla(236, 59%, 25%, 0.5);
+
+  // Menu Hamburger
+
+  &.open {
+    .header__toggle {
+      > span:first-child {
+        transform: rotate(45deg);
+      }
+
+      > span:nth-child(2) {
+        opacity: 0;
+      }
+
+      > span:last-child {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  .overlay {
+    opacity: 0;
+    position: fixed;
+    top: 0px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient($darkBlue, transparent);
+  }
+
+  nav {
+    position: relative;
+    background-color: $white;
+    padding-top: 1.0625rem;
+    padding-bottom: 1.0625rem;
+    transition: all 300ms ease-in-out;
+  }
+
+  /* The sticky class is added to the navbar with JS when it reaches its scroll position */
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+  .sticky + .content {
+    padding-top: 60px;
+  }
+
+  &__toggle {
+    // Menu Mobile hamburger
+
+    //direct child
+    > span {
+      display: block;
+      width: 26px;
+      height: 2px;
+      background-color: $darkBlue;
+      transition: all 300ms ease-in-out;
+      transform-origin: 3px 1px;
+
+      &:not(:last-child) {
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    width: calc(100% - 12rem);
+    left: 50%;
+    transform: translateX(-50%);
+    background: $white;
+    margin-top: 2rem;
+    padding: 1.625rem;
+    border-radius: 5px;
+
+    a {
+      display: block;
+      color: $darkBlue;
+      padding: 0.625rem;
+      text-align: center;
+      cursor: pointer;
+
+      &:hover {
+        color: $grayishBlue;
+      }
+    }
+  }
+
+  &__links {
+    .active {
+      color: $b0;
+      &::before {
+        opacity: 1;
+      }
+    }
+    a {
+      position: relative;
+
+      font-size: $font-sm;
+      font-weight: 400;
+      color: $grayishBlue;
+      cursor: pointer;
+      transition: color 300ms ease-in-out;
+
+      &:not(:last-child) {
+        margin-right: 32px;
+      }
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        height: 3px;
+        left: 0;
+        right: 0;
+        bottom: -30px;
+        border-radius: 5px;
+        background: $darkBlue;
+        opacity: 0;
+        transition: all 300ms ease-in-out;
+      }
+
+      &:hover {
+        color: $darkBlue;
+
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  /*  PRIMARY CTA  */
+  .primaryCta {
+    position: relative;
+    overflow: hidden;
+    width: max-content;
+    cursor: pointer;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.75;
+    }
+
+    animation: shiny-btn1 3s ease-in-out infinite;
+  }
+
+  .primaryCta button {
+    padding: 16px 32px;
+    background: linear-gradient(to right, $darkBlue, $navGrayishBlue);
+    border: none;
+    cursor: pointer;
+  }
+
+  button {
+    color: $white;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 100%;
+  }
+
+  button:focus {
+    outline: none;
+  }
+
+  .primaryCta::before {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: -25px;
+    left: -25px;
+    background-color: $white;
+    transform: rotate(45deg);
+  }
+
+  .primaryCta::after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: $white;
+    transform: rotate(45deg);
+    right: -25px;
+    bottom: -25px;
+  }
+}

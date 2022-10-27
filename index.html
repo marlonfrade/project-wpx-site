@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="WPX Locação e Logística" />
+    <meta name="keywords" content="HTML, CSS, JavaScript" />
+    <meta name="author" content="WPX" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;300;400&display=swap" rel="stylesheet" />
+
+    <!-- Link SASS style -->
+    <link rel="stylesheet" href="/styles/scss/style.css" />
+
+    <title>WPX Locação e Logística</title>
+    <link rel="icon" href="./src/svg/Logo.min.svg" />
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header id="navbar" class="header">
+        <div class="overlay has-fade"></div>
+
+        <nav id="nav" class="container container--nav flex flex-jc-sb flex-ai-c">
+            <a href="/" class="header__logo">
+                <img loading="lazy" src="./src/img/Logo.min.jpg" alt="Logo" />
+            </a>
+
+            <a id="btnHamburger" href="#" class="header__toggle hide-for-desktop">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+
+            <div class="header__links hide-for-mobile">
+                <a nav href="#home">Home</a>
+                <a nav href="#rent">Locação</a>
+                <a nav href="#logistics">Logística</a>
+                <a nav href="#tech">Tecnologia</a>
+                <a nav href="#about">Quem somos</a>
+                <a nav href="#sustentabilidade">Sustentabilidade</a>
+                <a onclick="window.location.href='/public/codigo.pdf'">Código de conduta ética</a>
+            </div>
+            <a href="/views/budget.html" class="hide-for-mobile">
+                <div class="primaryCta">
+                    <button aria-label="ir para formulário">Solicitar orçamento</button>
+                </div>
+            </a>
+        </nav>
+
+        <div mobile class="header__menu has-fade">
+            <a href="#home" onclick="hamMenu()">Home</a>
+            <a href="#rent" onclick="hamMenu()">Locação</a>
+            <a href="#logistics" onclick="hamMenu()">Logística</a>
+            <a href="#tech" onclick="hamMenu()">Tecnologia</a>
+            <a href="#about" onclick="hamMenu()">Quem somos</a>
+            <a href="#sustentabilidade" onclick="hamMenu()">Sustentabilidade</a>
+            <a onclick="window.location.href='/public/codigo.pdf'">Código de conduta ética</a>
+            <a href="/views/budget.html">Solicitar orçamento</a>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section id="home" class="hero">
+        <div class="hero__image">
+            <div class="container">
+                <video autoplay muted loop id="myVideo" class="hero__video" poster="./src/img/videobg.min.png">
+                    <source src="./src/video/hero-video-wpx.mp4" type="video/mp4" />
+                </video>
+                <div class="hero__text container--px container--pt fade-in">
+                    <h1>ESTAMOS CRIANDO O FUTURO DO SETOR!</h1>
+
+                    <p class="hide-for-mobile">
+                        Investimentos em tecnologia e desenvolvimento de sistemas de
+                        gestão de processos logísticos e sustentáveis são o foco atual da
+                        WPX.
+                    </p>
+                    <p class="hide-for-mobile">
+                        Implantação de soluções modernas e tecnológicas que priorizam
+                        controle e o apelo sustentável.
+                    </p>
+
+                    <a href="/views/budget.html" class="cta-mobile hide-for-desktop">
+                        <img loading="lazy" src="./src/svg/CTA1 light.min.svg" alt="botão para solicitar orçamento" />
+                    </a>
+
+                    <a href="/views/fleet.html" class="cta-mobile hide-for-desktop">
+                        <img loading="lazy" src="./src/svg/CTA2 light.min.svg" alt="botão para visualizar a frota" />
+                    </a>
+
+                    <div class="hero__text__links flex">
+                        <a href="#rent" class="hide-for-mobile">
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                <path d="M1 11L11 1M11 1V9M11 1H3.5" stroke="white" stroke-width="2" />
+                            </svg>
+                            <h3>Locação</h3>
+                            <p>
+                                Nós garantimos otimização de custos, eficiência com alta
+                                performance e sistema próprio para entregar o melhor serviço
+                                de locação e atendimento para os nossos clientes.
+                            </p>
+                        </a>
+
+                        <div class="detailMain hide-for-mobile"></div>
+
+                        <a href="#logistics" class="hide-for-mobile">
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                <path d="M1 11L11 1M11 1V9M11 1H3.5" stroke="white" stroke-width="2" />
+                            </svg>
+                            <h3>Logística</h3>
+                            <p>
+                                Nosso compromisso é garantir que os processos logísticos da
+                                organização sejam otimizados, garantindo a redução de custos e
+                                a agilidade no transporte e distribuição dos produtos.
+                            </p>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero__icons flex flex-jc-sb">
+                    <a href="#rent" class="icon1">
+                        <div class="arrow-down">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </a>
+
+                    <a href="https://wa.me/5547992711360?text=Olá%20Gostaria%20de%20solicitar%20um%20orçamento!%20poderia%20me%20ajudar?"
+                        class="icon2" target="_blank">
+                        <img loading="lazy" src="./src/svg/Whatsapp.min.svg" alt="whatsapp" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RENT -->
+    <section class="rent" id="rent">
+        <div class="rent__content container container--pall flex flex-jc-sb">
+            <div class="rent__left">
+                <h1>
+                    A escolha certa em locação de equipamentos e máquinas pesadas!
+                </h1>
+                <p>
+                    Equipe especializada, com larga experiência e com Know How em
+                    terceirização de frota, a WPX conta com equipamentos modernos, e com
+                    uma equipe responsável treinada para atuar nas manutenções
+                    preventivas, na elaboração de projetos e dimensionamento de frotas
+                    para o cliente, o que proporcionará alta performance e maior
+                    segurança.
+                </p>
+
+                <div class="rent__cta flex">
+                    <a href="/views/budget.html">
+                        <div class="primaryCta">
+                            <button aria-label="ir para formulário">
+                                Solicitar orçamento
+                            </button>
+                        </div>
+                    </a>
+                    <a href="/">
+                        <div class="secondaryCta">
+                            <button onclick="" aria-label="ir para visualização da frota">
+                                Visualizar frota
+                            </button>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="rent__right">
+                <aside>
+                    <h1><span>+ de 100</span> obras atendidas</h1>
+                    <h1><span>+ de 400</span> máquinas e veículos</h1>
+                    <h1><span>+ de 100</span> milhões investidos</h1>
+                    <h1>
+                        <span>Mineração Pesada, Infraestrutura e Máquinas Florestais</span>
+                    </h1>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- RENT FEATURES -->
+    <section class="feature">
+        <div class="feature__content container container--px">
+            <div class="feature__grid">
+                <div class="feature__item">
+                    <div class="feature__icon">
+                        <img loading="lazy" src="./src/svg/rentCard1.min.svg" alt="" />
+                    </div>
+
+                    <div class="feature__title">EQUIPE TREINADA E ESPECIALIZADA</div>
+                </div>
+
+                <div class="feature__item">
+                    <div class="feature__icon">
+                        <img loading="lazy" src="./src/svg/rentCard2.min.svg" alt="" />
+                    </div>
+
+                    <div class="feature__title">
+                        LOCAÇÃO DE MÁQUINAS, EQUIPAMENTOS PARA OBRAS E VEÍCULOS
+                    </div>
+                </div>
+
+                <div class="feature__item">
+                    <div class="feature__icon">
+                        <img loading="lazy" src="./src/svg/rentCard3.min.svg" alt="" />
+                    </div>
+
+                    <div class="feature__title">SISTEMA PRÓPRIO</div>
+                </div>
+
+                <div class="feature__item">
+                    <div class="feature__icon">
+                        <img loading="lazy" src="./src/svg/rentCard4.min.svg" alt="" />
+                    </div>
+
+                    <div class="feature__title">
+                        TERCEIRIZAÇÃO DE FROTAS PARA SUA EMPRESA
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOGISTICS -->
+    <section class="logistic" id="logistics">
+        <div class="logistic__content container container--pall flex flex-jc-sb">
+            <div class="logistic__left">
+                <aside>
+                    <h1>
+                        <span>Flexibilidade nos processos logísticos, garantindo redução de
+                            custos e agilidade.</span>
+                    </h1>
+                </aside>
+            </div>
+            <div class="logistic__right">
+                <h1>Logística com eficiência que gera Economia</h1>
+
+                <p>
+                    Nosso compromisso é garantir que os processos logísticos da
+                    organização sejam otimizados, garantindo a redução de custos e a
+                    agilidade no transporte e distribuição dos produtos.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- DATAFLEET -->
+    <section class="tech" id="tech">
+        <div class="tech__content container container--px container--pt flex flex-jc-sb">
+            <div class="tech__left">
+                <h1>Controle e confiança em tempo real para gestão de frotas</h1>
+
+                <p>
+                    A WPX conta com o sistema DataFleet, um aplicativo desenvolvido para
+                    gerir frotas com mais controle e confiança.
+                </p>
+
+                <p>Dentre suas funcionalidades, possui:</p>
+
+                <ul>
+                    <li>
+                        Recebimento automático para controle de alertas de manutenção e
+                        trabalho de todos os equipamentos;
+                    </li>
+                    <li>
+                        Recebimento de imagens em tempo real, da área interna e externa
+                        dos equipamentos;
+                    </li>
+                    <li>
+                        Placas próprias WPX com tecnologia QRCode + NFC para consulta de
+                        histórico de trabalho de cada equipamento;
+                    </li>
+                    <li>Dashboards personalizados para acesso dos clientes da WPX;</li>
+                    <li>Relatórios de análise e faturamento em tempo real;</li>
+                </ul>
+            </div>
+            <div class="tech__right">
+                <h1>Sistema Datafleet</h1>
+                <div class="techPhone">
+                    <img loading="lazy" src="./src/img/DataFleet.min.jpg" alt="Datafleet" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DATAFLEET FEATURES -->
+    <section class="techfeat">
+        <div class="techfeat__content container container--px">
+            <div class="techfeat__grid">
+                <div class="techfeat__item">
+                    <div class="techfeat__icon">
+                        <!-- <h2>Business Intelligence</h2> -->
+                        <h2>Vantagens:</h2>
+                    </div>
+
+                    <div class="techfeat__title">
+                        <ul>
+                            <li>Agilidade na resolução de problemas de manutenção</li>
+                            <li>Desempenho eficiente na comunicação</li>
+                            <li>Gestão Estratégica com foco no resultado para o cliente</li>
+                        </ul>
+                    </div>
+
+                    <a onClick="window.location.href='/public/WPX - Força e Tecnologia.pdf'">
+                        <div class="techfeat__description">
+                            <button aria-label="ir para formulário">Veja Mais</button>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+        <div class="about__content container container--px container--pt flex flex-jc-sb">
+            <div class="about__left">
+                <h1>
+                    <span>+ de 400</span> maquinários para atender a sua demanda
+                    completa
+                </h1>
+                <h1>
+                    <span>Amplos setores</span> de atuação como mineiração pesada e
+                    maquinário
+                </h1>
+            </div>
+            <div class="about__right">
+                <h1>
+                    Uma forma administrativa e operacional muito mais eficiente e
+                    econômica
+                </h1>
+                <p>
+                    A WPX possui equipe especializada com engenheiros, mecânicos e
+                    assessoria administrativa, gerando adequações importantes e
+                    excelência na entrega da obra. Além de oferecer terceirização de
+                    frota para empresas e órgãos públicos de acordo com a necessidade e
+                    tempo para atender a demanda. A locação de maquinários e
+                    equipamentos para obras e veículos de mobilidade urbana, é uma forma
+                    eficaz de reduzir custos e otimizar tempo. Opera em todo o Brasil
+                    com equipe especializada prestando assessoria completa nos mais
+                    variados segmentos.
+                </p>
+
+                <div class="about__cta flex">
+                    <a href="/views/budget.html">
+                        <div class="primaryCta">
+                            <button aria-label="ir para formulário">
+                                Solicitar orçamento
+                            </button>
+                        </div>
+                    </a>
+                    <a href="/views/fleet.html">
+                        <div class="secondaryCta">
+                            <button onclick="" aria-label="ir para visualização da frota">
+                                Visualizar frota
+                            </button>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT FEATURES -->
+    <section class="aboutfeat">
+        <div class="aboutfeat__content container">
+            <div class="aboutfeat__grid">
+                <div class="aboutfeat__item">
+                    <div class="aboutfeat__icon">
+                        <img loading="lazy" src="./src/svg/iconMission.min.svg" alt="Propósito" />
+                    </div>
+
+                    <div class="aboutfeat__title">Propósito</div>
+
+                    <div class="aboutfeat__description">
+                        Oferecer a melhor experiência em locação de máquinas pesadas e
+                        equipamentos que otimizam o tempo e os custos dos nossos clientes,
+                        com tecnologia e inovação.
+                    </div>
+                </div>
+
+                <div class="aboutfeat__item">
+                    <div class="aboutfeat__icon">
+                        <img loading="lazy" src="./src/svg/iconVision.min.svg" alt="Visão" />
+                    </div>
+
+                    <div class="aboutfeat__title">Visão</div>
+
+                    <div class="aboutfeat__description">
+                        Se tornar referência em empresa que une tecnologia,
+                        sustentabilidade e gestão em seus processos.
+                    </div>
+                </div>
+
+                <div class="aboutfeat__item">
+                    <div class="aboutfeat__icon">
+                        <img loading="lazy" src="./src/svg/iconValue.min.svg" alt="Valores" />
+                    </div>
+
+                    <div class="aboutfeat__title">Valores</div>
+
+                    <div class="aboutfeat__description">
+                        Ética, honestidade, transparência, empatia e inovação.
+                    </div>
+                </div>
+            </div>
+            <div class="mobileCards hide-for-desktop flex flex-jc-sb">
+                <div class="card">
+                    <img loading="lazy" src="./src/svg/iconMission.min.svg" alt="Avatar" />
+                    <div class="container">
+                        <h3><b>Propósito</b></h3>
+                        <p>
+                            Oferecer a melhor experiência em locação de máquinas pesadas e
+                            equipamentos que otimizam o tempo e os custos dos nossos
+                            clientes, por meio de tecnologia e inovação.
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img loading="lazy" src="./src/svg/iconVision.min.svg" alt="Avatar" />
+                    <div class="container">
+                        <h3><b>Visão</b></h3>
+                        <p>
+                            Se tornar referência em empresa que une tecnologia,
+                            sustentabilidade e gestão em seus processos.
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img loading="lazy" src="./src/svg/iconValue.min.svg" alt="Avatar"" />
+            <div class=" container">
+                    <h3><b>Valores</b></h3>
+                    <p>Ética, honestidade, transparência, empatia e inovação.</p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- ARTIGOS SUSTENTABILIDADE -->
+    <section class="articles" id="sustentabilidade">
+        <div class="article__content container container--pall">
+            <h2>Práticas Sustentáveis</h2>
+
+            <p>
+                Somos uma empresa que acredita em equilibrar práticas ambientais e
+                investimentos e temos a certeza de que a construção de um futuro
+                inovador e sustentável começa hoje. Adotamos as práticas de ESG na
+                empresa por acreditar na verdadeira mudança de paradigma nas relações
+                comerciais.
+            </p>
+            <p>Entenda melhor nossas práticas:</p>
+
+            <div class="article__grid">
+                <a href="#" class="article__item">
+                    <div class="article__image" style="background-image: url(./src/img/img_ambiental.min.png)"></div>
+                    <div class="article__text">
+                        <div class="article__author">WPX</div>
+                        <div class="article__title">Ambiental</div>
+                        <div class="article__description">
+                            Buscamos novas tecnologias tanto em equipamentos e máquinas como
+                            em todos os processos, para reduzir o impacto ambiental,
+                            minimizar desperdícios e manutenções, para aumentar a
+                            eficiência, qualidade e rapidez do nosso trabalho.
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="article__item">
+                    <div class="article__image" style="background-image: url(./src/img/img_social.min.png)"></div>
+                    <div class="article__text">
+                        <div class="article__author">WPX</div>
+                        <div class="article__title">Social</div>
+                        <div class="article__description">
+                            Estamos comprometidos com a diversidade de nossas equipes e com
+                            a igualdade de oportunidades e de tratamento, para desenvolver e
+                            criar um ambiente de colaboração, ética, inovação, empatia e
+                            equidade.
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="article__item">
+                    <div class="article__image" style="background-image: url(./src/img/img_governanca.min.png)"></div>
+                    <div class="article__text">
+                        <div class="article__author">WPX</div>
+                        <div class="article__title">Governança</div>
+                        <div class="article__description">
+                            Dentro da nossa cadeia corporativa inserimos integridade,
+                            honestidade, responsabilidade, empatia, inovação e qualidade
+                            como valores fundamentais.
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT FEATURES -->
+    <section class="contactfeat">
+        <div class="contactfeat__content container container--px">
+            <div class="contactfeat__grid">
+                <div class="contactfeat__item">
+                    <div class="contactfeat__icon">
+                        <h1>Possui Máquina ou Caminhão?</h1>
+                    </div>
+
+                    <div class="contactfeat__title">
+                        Venha fazer parte da família WPX! <br />
+                        Acesse nossa página de agregados:
+                    </div>
+
+                    <div class="contactfeat__description flex flex-jc-sb">
+                        <a href="/views/aggregates.html">
+                            <div class="primaryCta">
+                                <button aria-label="ir para formulário">
+                                    Veja os Benefícios
+                                </button>
+                            </div>
+                        </a>
+                        <a href="https://wa.me/5547992711360?text=Olá%20Gostaria%20de%20trabalhar%20com%20a WPX!%20poderia%20me%20ajudar?"
+                            class="icon2" target="_blank">
+                            <img loading="lazy" src="./src/svg/Whatsapp.min.svg" alt="whatsapp" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__logo logo">
+                <a href="#">
+                    <img loading="lazy" src="./src/svg/logofooter.min.svg" />
+                </a>
+                <a href="/views/budget.html">
+                    <div class="primaryCta">
+                        <button aria-label="ir para formulário">
+                            Solicitar orçamento
+                        </button>
+                    </div>
+                </a>
+            </div>
+
+            <div class="footer__social social"></div>
+
+            <div class="footer__cta cta"></div>
+
+            <div class="footer__location location1">
+                <h3>Endereço</h3>
+
+                <ul>
+                    <li>
+                        <a href="https://goo.gl/maps/mUybLf3JV6sQ57jr5" target="_blank">
+                            Palmas/TO. Av. Juscelino Kubitschek , 147, Sala 08 B, Plano
+                            diretor Norte - CEP: 7001-014.
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://goo.gl/maps/p9VqmUdGeKGxJw6t7" target="_blank">São Paulo/SP. Rua Joaquim
+                            Floriano, 466, cj 2305, Itaim bibi -
+                            CEP: 04534-011</a>
+                    </li>
+                    <li>
+                        <a href="https://goo.gl/maps/8YjvFuqRo2JnL3Mh6" target="_blank">
+                            Itajaí/SC. Av. Osvaldo Reis, 3281, Sala 2001 Riviera Business
+                            Praia Brava- CEP: 88306‒773.</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__location location2"></div>
+
+            <div class="footer__contact contact">
+                <h3>Contatos</h3>
+                <h4>
+                    (47) 3514-0558 <br />(49) 99171-7199 <br />
+                    contato@wpxlocacao.com.br
+                </h4>
+                <a href="https://www.linkedin.com/company/wpx/" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48px" height="48px">
+                        <path fill="#0288D1"
+                            d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5V37z" />
+                        <path fill="#FFF"
+                            d="M12 19H17V36H12zM14.485 17h-.028C12.965 17 12 15.888 12 14.499 12 13.08 12.995 12 14.514 12c1.521 0 2.458 1.08 2.486 2.499C17 15.887 16.035 17 14.485 17zM36 36h-5v-9.099c0-2.198-1.225-3.698-3.192-3.698-1.501 0-2.313 1.012-2.707 1.99C24.957 25.543 25 26.511 25 27v9h-5V19h5v2.616C25.721 20.5 26.85 19 29.738 19c3.578 0 6.261 2.25 6.261 7.274L36 36 36 36z" />
+                    </svg>
+                </a>
+
+                <a href="https://www.instagram.com/wpxlocacao/" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48px" height="48px">
+                        <radialGradient id="yOrnnhliCrdS2gy~4tD8ma" cx="19.38" cy="42.035" r="44.899"
+                            gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#fd5" />
+                            <stop offset=".328" stop-color="#ff543f" />
+                            <stop offset=".348" stop-color="#fc5245" />
+                            <stop offset=".504" stop-color="#e64771" />
+                            <stop offset=".643" stop-color="#d53e91" />
+                            <stop offset=".761" stop-color="#cc39a4" />
+                            <stop offset=".841" stop-color="#c837ab" />
+                        </radialGradient>
+                        <path fill="url(#yOrnnhliCrdS2gy~4tD8ma)"
+                            d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z" />
+                        <radialGradient id="yOrnnhliCrdS2gy~4tD8mb" cx="11.786" cy="5.54" r="29.813"
+                            gradientTransform="matrix(1 0 0 .6663 0 1.849)" gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#4168c9" />
+                            <stop offset=".999" stop-color="#4168c9" stop-opacity="0" />
+                        </radialGradient>
+                        <path fill="url(#yOrnnhliCrdS2gy~4tD8mb)"
+                            d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z" />
+                        <path fill="#fff"
+                            d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z" />
+                        <circle cx="31.5" cy="16.5" r="1.5" fill="#fff" />
+                        <path fill="#fff"
+                            d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z" />
+                    </svg>
+                </a>
+            </div>
+
+            <div class="footer__form form">
+                <!-- <label for="name">Cadastre-se para receber nossas ofertas</label>
+          <input type="text" name="name" id="name" placeholder="Nome" />
+          <input type="email" name="email" id="email" placeholder="Email" />
+          <button type="submit">Cadastre-se</button> -->
+            </div>
+        </div>
+        <div class="footer__copyright copyright">
+            &copy; WPX. <br />
+            Todos os Direitos Reservados.
+        </div>
+        <div class="footer__copyright copyright">Powered By MonkeyBranch</div>
+    </footer>
+
+    <script src="./scripts/js/index.js"></script>
+</body>
+
+</html>

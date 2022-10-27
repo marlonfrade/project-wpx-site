@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="WPX Locação e Logística" />
+    <meta name="keywords" content="HTML, CSS, JavaScript" />
+    <meta name="author" content="WPX" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;300;400&display=swap" rel="stylesheet" />
+
+    <!-- Link SASS style -->
+    <link rel="stylesheet" href="/styles/scss/style.css" />
+
+    <title>WPX Locação e Logística</title>
+    <link rel="icon" href="/src/svg/Logo.min.svg" />
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="overlay has-fade"></div>
+
+        <nav id="nav" class="container container--nav flex flex-jc-sb flex-ai-c">
+            <a href="/" class="header__logo">
+                <img src="../src/img/Logo.min.jpg" alt="Logo" />
+            </a>
+
+            <a id="btnHamburger" href="#" class="header__toggle hide-for-desktop">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+
+            <div class="header__links hide-for-mobile">
+                <a href="../index.html">Home</a>
+                <a href="../index.html#rent">Locação</a>
+                <a href="../index.html#logistics">Logística</a>
+                <a href="../index.html#tech">Tecnologia</a>
+                <a href="../index.html#about">Quem somos</a>
+                <a href="../index.html#sustentabilidade">Sustentabilidade</a>
+                <a onclick="window.location.href='/public/codigo.pdf'">Código de conduta ética</a>
+            </div>
+            <a href="../index.html" class="hide-for-mobile">
+                <div class="primaryCta">
+                    <button aria-label="ir para formulário">Voltar ao Site</button>
+                </div>
+            </a>
+        </nav>
+
+        <div mobile class="header__menu has-fade">
+            <a href="../index.html" onclick="hamMenu()">Home</a>
+            <a href="../index.html#rent" onclick="hamMenu()">Locação</a>
+            <a href="../index.html#logistics" onclick="hamMenu()">Logística</a>
+            <a href="../index.html#tech" onclick="hamMenu()">Tecnologia</a>
+            <a href="../index.html#about" onclick="hamMenu()">Quem somos</a>
+            <a href="../index.html#sustentabilidade" onclick="hamMenu()">Sustentabilidade</a>
+            <a onclick="window.location.href='/public/codigo.pdf'">Código de conduta ética</a>
+            <a href="../index.html">Voltar ao Site</a>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero__partnerBg">
+                <div class="hero__budgetTxt container--pall fade-in">
+                    <h1>Campanha de Agregados WPX</h1>
+                    <p>
+                        Seja o nosso parceiro na locação! Locando através da WPX, você
+                        recebe muitos benefícios.
+                    </p>
+
+                    <a href="https://wa.me/5547992711360?text=Olá%20Gostaria%20de%20trabalhar%20com%20a WPX!%20poderia%20me%20ajudar?"
+                        class="cta-mobile">
+                        <img src="../src/svg/contact.min.svg" alt="botão para visualizar a frota" />
+                    </a>
+                </div>
+                <div class="hero__icons flex flex-jc-sb">
+                    <a href="https://wa.me/5547992711360?text=Olá%20Gostaria%20de%20trabalhar%20com%20a WPX!%20poderia%20me%20ajudar?"
+                        class="icon4" target="_blank">
+                        <img src="../src/svg/Whatsapp.min.svg" alt="whatsapp" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="partner">
+        <div class="partner__content container container--pall">
+            <div class="partner__intro">
+                <h1>Veja seus benefícios locando com a WPX:</h1>
+            </div>
+
+            <div class="partner__grid">
+                <a href="#" class="partner__item">
+                    <div class="partner__image" style="background-image: url(/src/img/confianca.min.jpg)"></div>
+                    <div class="partner__text">
+                        <div class="partner__title">Confiança</div>
+                        <div class="partner__description">
+                            Pagamento garantido em dia e até de forma antecipada conforme
+                            contrato.
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="partner__item">
+                    <div class="partner__image" style="background-image: url(/src/img/seguranca.min.jpg)"></div>
+                    <div class="partner__text">
+                        <div class="partner__title">Segurança</div>
+                        <div class="partner__description">
+                            Acompanhamento da sua máquina ou caminhão em obra durante todo o
+                            tempo.
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="partner__item">
+                    <div class="partner__image" style="background-image: url(/src/img/assistencia.min.jpg)"></div>
+                    <div class="partner__text">
+                        <div class="partner__title">Assistência</div>
+                        <div class="partner__description">
+                            Assistência de mecânica 24 horas.
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="partner__item">
+                    <div class="partner__image" style="background-image: url(/src/img/valorizacao.min.jpg)"></div>
+                    <div class="partner__text">
+                        <div class="partner__title">Valorização</div>
+                        <div class="partner__description">
+                            Receba valores competitivos para o mercado.
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="partner__item">
+                    <div class="partner__image__logo" style="background-image: url(/src/img/logo2.min.jpeg)"></div>
+                    <div class=" partner__text">
+                        <div class="partner__title">Selo WPX</div>
+                        <div class="partner__description">
+                            Receba o selo família WPX e melhore sua rentabilidade conforme
+                            performance do seu equipamento.
+                        </div>
+
+                    </div>
+                </a>
+                <a href="#" class="partner__item">
+                    <div class="partner__image" style="background-image: url(/src/img/treinamento.min.jpg)"></div>
+                    <div class="partner__text">
+                        <div class="partner__title">Treinamento</div>
+                        <div class="partner__description">
+                            Treinamentos gratuitos em gestão.
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="partner__contact">
+                <h1>Venha fazer parte da família WPX e seja o nosso agregado!</h1>
+                <a
+                    href="https://wa.me/5547992711360?text=Olá%20Gostaria%20de%20trabalhar%20com%20a WPX!%20poderia%20me%20ajudar?">Entre
+                    em Contato
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__logo logo">
+                <a href="#">
+                    <img src="../src/svg/logofooter.min.svg" />
+                </a>
+                <div class="primaryCta">
+                    <button aria-label="ir para formulário">
+                        <a href="/views/budget.html">Solicitar orçamento</a>
+                    </button>
+                </div>
+            </div>
+
+            <div class="footer__social social"></div>
+
+            <div class="footer__cta cta"></div>
+
+            <div class="footer__location location1">
+                <h3>Endereço</h3>
+                <ul>
+                    <li>
+                        <a href="https://goo.gl/maps/mUybLf3JV6sQ57jr5" target="_blank">
+                            Palmas/TO. Av. Juscelino Kubitschek , 147, Sala 08 B, Plano
+                            diretor Norte - CEP: 7001-014.
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://goo.gl/maps/p9VqmUdGeKGxJw6t7" target="_blank">São Paulo/SP. Rua Joaquim
+                            Floriano, 466, cj 2305, Itaim bibi -
+                            CEP: 04534-011</a>
+                    </li>
+                    <li>
+                        <a href="https://goo.gl/maps/8YjvFuqRo2JnL3Mh6" target="_blank">
+                            Itajaí/SC. Av. Osvaldo Reis, 3281, Sala 2001 Riviera Business
+                            Praia Brava- CEP: 88306‒773.</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__location location2"></div>
+
+            <div class="footer__contact contact">
+                <h3>Contatos</h3>
+                <h4>
+                    (47) 3514-0558 <br />(49) 99171-7199 <br />
+                    contato@wpxlocacao.com.br
+                </h4>
+                <a href="https://www.linkedin.com/company/wpx/" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48px" height="48px">
+                        <path fill="#0288D1"
+                            d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5V37z" />
+                        <path fill="#FFF"
+                            d="M12 19H17V36H12zM14.485 17h-.028C12.965 17 12 15.888 12 14.499 12 13.08 12.995 12 14.514 12c1.521 0 2.458 1.08 2.486 2.499C17 15.887 16.035 17 14.485 17zM36 36h-5v-9.099c0-2.198-1.225-3.698-3.192-3.698-1.501 0-2.313 1.012-2.707 1.99C24.957 25.543 25 26.511 25 27v9h-5V19h5v2.616C25.721 20.5 26.85 19 29.738 19c3.578 0 6.261 2.25 6.261 7.274L36 36 36 36z" />
+                    </svg>
+                </a>
+
+                <a href="https://www.instagram.com/wpxlocacao/" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48px" height="48px">
+                        <radialGradient id="yOrnnhliCrdS2gy~4tD8ma" cx="19.38" cy="42.035" r="44.899"
+                            gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#fd5" />
+                            <stop offset=".328" stop-color="#ff543f" />
+                            <stop offset=".348" stop-color="#fc5245" />
+                            <stop offset=".504" stop-color="#e64771" />
+                            <stop offset=".643" stop-color="#d53e91" />
+                            <stop offset=".761" stop-color="#cc39a4" />
+                            <stop offset=".841" stop-color="#c837ab" />
+                        </radialGradient>
+                        <path fill="url(#yOrnnhliCrdS2gy~4tD8ma)"
+                            d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z" />
+                        <radialGradient id="yOrnnhliCrdS2gy~4tD8mb" cx="11.786" cy="5.54" r="29.813"
+                            gradientTransform="matrix(1 0 0 .6663 0 1.849)" gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#4168c9" />
+                            <stop offset=".999" stop-color="#4168c9" stop-opacity="0" />
+                        </radialGradient>
+                        <path fill="url(#yOrnnhliCrdS2gy~4tD8mb)"
+                            d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z" />
+                        <path fill="#fff"
+                            d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z" />
+                        <circle cx="31.5" cy="16.5" r="1.5" fill="#fff" />
+                        <path fill="#fff"
+                            d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z" />
+                    </svg>
+                </a>
+            </div>
+
+            <div class="footer__form form">
+                <!-- <label for="name">Cadastre-se para receber nossas ofertas</label>
+          <input type="text" name="name" id="name" placeholder="Nome" />
+          <input type="email" name="email" id="email" placeholder="Email" />
+          <button type="submit">Cadastre-se</button> -->
+            </div>
+        </div>
+        <div class="footer__copyright copyright">
+            &copy; WPX. <br />
+            Todos os Direitos Reservados.
+        </div>
+        <div class="footer__copyright copyright">Powered By MonkeyBranch</div>
+    </footer>
+
+    <script src="../scripts/index.js"></script>
+</body>
+
+</html>

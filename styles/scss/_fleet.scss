@@ -1,0 +1,472 @@
+/* INNER NAVIGATION */
+.navInnerPages {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+  padding-bottom: 5%;
+  z-index: -999;
+  cursor: pointer;
+}
+
+.navInnerPages > * {
+  font-family: "Lexend Deca", sans-serif;
+  position: relative;
+  margin: 0 32px;
+  padding: 16px 40px;
+  font-size: 20px;
+  color: #1e2149;
+  border: none;
+  background-color: transparent;
+  opacity: 0.8;
+  transition: 600ms;
+  cursor: pointer;
+}
+
+.navInnerPages > *::after {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  top: -10px;
+  left: -10px;
+  transform: rotate(45deg);
+  background-color: #f6f6f6;
+}
+
+.navInnerPages > *::before {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  bottom: -10px;
+  right: -10px;
+  transform: rotate(45deg);
+  background-color: #f6f6f6;
+}
+
+.activeBtnNav {
+  opacity: 1;
+  color: white;
+  background-color: #1e2149;
+}
+
+/* HEADER FLEET */
+.headerFleet {
+  color: $b0;
+  font-size: 20px;
+  width: 17%;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 80px;
+  align-items: center;
+  cursor: pointer;
+
+  @include breakpoint-down(medium) {
+    position: relative;
+  }
+}
+
+main {
+  padding: 0 80px 160px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+main > *:nth-child(3n + 2) {
+  margin: 0 36px;
+}
+
+/* SINGULAR MACHINERY CARD */
+.cardMachinery {
+  width: 29vw;
+  margin-bottom: 40px;
+  //   box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+.machineryData {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  padding: 32px;
+  box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+.machineryData > img {
+  object-fit: contain;
+}
+
+.machineryData > .data {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-content: right;
+  text-align: right;
+}
+
+.machineryData > .data > div > img {
+  margin-right: 16px;
+}
+
+.hp {
+  width: 16px;
+}
+
+.weight {
+  height: 18px;
+}
+
+.machineryData > .data > div {
+  justify-content: right;
+  align-items: center;
+}
+
+.data h3 {
+  margin-bottom: 32px;
+}
+
+.data p {
+  padding: 0;
+  font-size: 12px;
+}
+
+.data > :nth-child(4) {
+  margin-top: 16px;
+}
+
+.ctaCard {
+  display: flex;
+}
+
+.ctaCard > button:nth-child(1) {
+  position: relative;
+}
+
+.ctaCard > button:nth-child(1):after {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  bottom: -10px;
+  left: -10px;
+  transform: rotate(45deg);
+  background-color: #f6f6f6;
+  z-index: 0;
+}
+
+.ctaCard > button:nth-child(2) {
+  background: #1e2149;
+  color: white;
+}
+
+.ctaCard > button {
+  display: flex;
+  align-items: center;
+  margin-top: 4px;
+  padding: 16px 32px;
+  border: none;
+  background-color: white;
+  width: 100%;
+  text-align: left;
+  color: #1e2149;
+}
+
+.ctaCard > button > img {
+  margin-left: 16px;
+}
+
+/* MODAL */
+.modal1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  display: none;
+  opacity: 0;
+  transition: 600ms;
+}
+
+.bgModal {
+  transition: 600ms;
+  z-index: 99;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modalContainer {
+  transition: 600ms;
+  width: max-content;
+  min-width: 40vw;
+  height: auto;
+  max-height: 90vh;
+  overflow-y: scroll;
+  position: fixed;
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  padding: 40px 64px;
+  background-color: white;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+.modalContainer p {
+  padding: 0;
+  margin-top: 32px;
+  font-size: 12px;
+}
+
+.modalRequest .machineryData {
+  padding: 0;
+  width: max-content;
+}
+
+.itemRequest {
+  margin: 64px 0;
+}
+
+.modalRequest .data {
+  margin-left: 32px;
+}
+
+.modalRequest .machineryData::after {
+  content: "";
+  z-index: 99;
+  height: 100%;
+  width: 4px;
+  margin: 0 64px;
+  background-color: rgba(141, 143, 169, 0.377);
+}
+
+label {
+  position: relative;
+}
+
+label h4 {
+  position: absolute;
+  padding: 0 2px;
+  background-color: white;
+  top: -14px;
+  left: 4px;
+}
+
+label input[type="number"] {
+  padding: 10px 12px;
+  border: 1px solid rgba(141, 143, 169, 0.377);
+}
+
+.infoRequest {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.infoRequest > *:nth-child(even) {
+  margin: 40px 0 0;
+}
+
+.time {
+  display: flex;
+  flex-direction: column;
+}
+
+select {
+  width: 128px;
+  padding: 10px 12px;
+  margin-top: 16px;
+  border: 1px solid rgba(141, 143, 169, 0.377);
+}
+
+.modalContent .ctaCard {
+  display: flex;
+  justify-content: right;
+}
+
+.modalContent button {
+  background-color: #1e2149;
+  color: white;
+  width: max-content;
+  font-size: 18px;
+}
+
+.modalContent button:nth-child(1):after {
+  background-color: white;
+}
+
+.modalContent .ctaCard > button:before {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  top: -10px;
+  right: -10px;
+  transform: rotate(45deg);
+  background-color: #fff;
+  z-index: 0;
+}
+
+@media (max-width: 1919px) {
+  .cardMachinery {
+    width: 48%;
+  }
+
+  main > *:nth-child(3n + 2) {
+    margin: 32px 0;
+  }
+
+  main {
+    justify-content: space-between;
+  }
+
+  main > :nth-child(3n + 2) {
+    margin: 0 0px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .navInnerPages {
+    flex-direction: column;
+  }
+
+  .navInnerPages > *:nth-child(even) {
+    margin: 32px 5vw;
+  }
+
+  .headerFleet {
+    padding: 40px 5vw 16px;
+    flex-direction: column;
+  }
+
+  .filterBtn {
+    margin-top: 32px;
+  }
+
+  .cardMachinery {
+    width: 100%;
+  }
+
+  .constructionSection > * {
+    margin: 32px 0;
+  }
+
+  .machineryData {
+    flex-direction: column;
+  }
+
+  .data {
+    margin-top: 32px;
+  }
+
+  .data h3 {
+    font-size: 22px;
+  }
+
+  main {
+    padding: 0 5vw 10vh;
+  }
+
+  .filter {
+    width: 85%;
+  }
+
+  .modalContainer {
+    padding: 5vh 5vw;
+    width: 100%;
+    overflow-x: hidden;
+    top: auto;
+    left: auto;
+    transform: translate3d(0, 0, 0);
+    bottom: 0;
+  }
+
+  .itemRequest {
+    flex-direction: column;
+  }
+
+  .machineryData {
+    width: 100%;
+    flex-direction: row;
+  }
+
+  .machineryData > img {
+    width: 50%;
+  }
+
+  .machineryData::after {
+    display: none;
+  }
+
+  .data {
+    margin: 0;
+  }
+
+  .infoRequest {
+    margin-top: 32px;
+  }
+
+  .time {
+    flex-direction: row;
+  }
+
+  select {
+    margin: 0 0 0 16px;
+  }
+}
+
+/* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: $grayishBlue; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left 0.5s;
+  padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}

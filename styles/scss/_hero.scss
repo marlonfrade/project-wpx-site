@@ -1,0 +1,611 @@
+.hero {
+  .coming {
+    background: linear-gradient(to bottom, #0066ff, transparent);
+  }
+  .client {
+    background: $white;
+    overflow: hidden;
+
+    h1 {
+      color: $b0;
+    }
+
+    p {
+      color: $b0;
+    }
+
+    img {
+      background-color: green;
+      padding: 5px;
+      border-radius: 15px;
+    }
+  }
+  .container {
+    position: relative;
+    max-height: 100%;
+    width: 100%;
+    @include breakpoint-up(large) {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+  }
+
+  #myVideo {
+    position: absolute;
+    // right: -27%;
+    right: 0%;
+    max-height: 100%;
+    bottom: 0;
+    min-width: 100%;
+
+    @include breakpoint-up(medium2) {
+      position: absolute;
+      right: -21%;
+      max-height: 133%;
+      bottom: 0;
+      min-width: 144%;
+    }
+  }
+
+  &__image {
+    position: relative;
+    background: rgba(0, 0, 0, 0.4), url("../../src/img/bgmain.min.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 17.5rem;
+
+    @include breakpoint-up(medium) {
+      min-height: 25rem;
+
+      @include breakpoint-up(large) {
+        flex: 3;
+        order: 2;
+        height: 47rem;
+      }
+
+      &::before {
+        @include breakpoint-up(large) {
+          position: absolute;
+          height: 41rem;
+          background-image: url("../../src/img/bgmain.min.jpg");
+          background-repeat: no-repeat;
+          background-position: center top;
+          width: 100%;
+          background-size: 100%;
+          background-position: 0% 0%;
+        }
+      }
+    }
+  }
+
+  &__coming {
+    position: relative;
+    background: url("../../src/svg/comingsoonBg.min.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 17.5rem;
+
+    @include breakpoint-up(medium) {
+      min-height: 28rem;
+
+      @include breakpoint-up(large) {
+        flex: 3;
+        order: 2;
+        height: 47rem;
+      }
+    }
+  }
+  &__client {
+    max-height: 100%;
+    padding-top: 50%;
+    position: relative;
+    background: url("../../src/img/newClientBg.min.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    @include breakpoint-up(medium) {
+      min-height: 25rem;
+
+      @include breakpoint-up(large) {
+        flex: 1;
+        order: 2;
+        height: 100%;
+      }
+    }
+  }
+
+  &__text {
+    color: $white;
+    text-align: center;
+    padding-top: 15%;
+
+    @include breakpoint-up(large) {
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    h1 {
+      color: $white;
+    }
+
+    h3 {
+      color: $white;
+    }
+
+    a {
+      color: $white;
+      cursor: pointer;
+    }
+
+    .cta-mobile {
+      img {
+        margin-bottom: 5%;
+      }
+      @include breakpoint-up(medium) {
+        margin: 0 auto;
+      }
+    }
+
+    .detailMain {
+      content: "";
+      width: 10px;
+      height: 17rem;
+      background-color: $white;
+      margin: 0 4rem;
+    }
+
+    @include breakpoint-up(large) {
+      width: 46%;
+      padding-top: 10%;
+      text-align: left;
+    }
+  }
+
+  &__content {
+    background: none;
+    color: $white;
+    text-align: center;
+
+    h1 {
+      color: $white;
+    }
+
+    h3 {
+      color: $white;
+    }
+
+    a {
+      color: $white;
+      cursor: pointer;
+    }
+
+    .cta-mobile {
+      img {
+        margin-bottom: 5%;
+      }
+      @include breakpoint-up(medium) {
+        margin: 0 auto;
+      }
+    }
+
+    .detailMain {
+      content: "";
+      width: 10px;
+      height: 17rem;
+      background-color: $white;
+      margin: 0 4rem;
+    }
+
+    @include breakpoint-up(large) {
+      width: 44%;
+      text-align: left;
+    }
+  }
+
+  &__icons {
+    align-self: flex-end;
+    height: 7rem;
+
+    @include breakpoint-up(large) {
+      width: 55%;
+    }
+    // padding: 22.5% 0%;
+    // margin-top: 38%;
+
+    .icon1 {
+      padding-left: 13rem;
+
+      @include breakpoint-down(medium) {
+        padding-left: 46%;
+      }
+      @include breakpoint-up(large) {
+        padding-left: 11%;
+      }
+    }
+
+    .icon2 {
+      position: absolute;
+      padding-right: 0rem;
+      top: 85%;
+      left: 5%;
+
+      @include breakpoint-up(large) {
+        top: 15%;
+        left: 91%;
+      }
+    }
+    .icon3 {
+      position: absolute;
+      padding-right: 0rem;
+      top: 85%;
+      left: 5%;
+
+      @include breakpoint-up(large) {
+        background-color: green;
+        padding: 5px;
+        border-radius: 15px;
+        top: 25%;
+        left: 91%;
+      }
+    }
+    .icon4 {
+      position: absolute;
+      padding-right: 0rem;
+      top: 85%;
+      left: 5%;
+
+      @include breakpoint-up(large) {
+        position: fixed;
+        z-index: 10000;
+        background-color: green;
+        padding: 5px;
+        border-radius: 15px;
+        top: 85%;
+        left: 91%;
+      }
+    }
+
+    .arrow-down {
+      position: relative;
+      width: 30px;
+      height: 30px;
+      transform: rotate(45deg);
+    }
+
+    .arrow-down span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-right: 3px solid $white;
+      border-bottom: 3px solid $white;
+      animation: arrow-down 1s linear infinite;
+    }
+
+    .arrow-down span:nth-child(1) {
+      top: -30px;
+      left: -30px;
+      animation-delay: 0;
+    }
+
+    .arrow-down span:nth-child(2) {
+      top: -15px;
+      left: -15px;
+      animation-delay: 0.2s;
+    }
+
+    .arrow-down span:nth-child(3) {
+      top: 0;
+      left: 0;
+      animation-delay: 0.4s;
+    }
+
+    .arrow-down span:nth-child(4) {
+      top: 15px;
+      left: 15px;
+      animation-delay: 0.6s;
+    }
+
+    .arrow-down span:nth-child(5) {
+      top: 30px;
+      left: 30px;
+      animation-delay: 0.8s;
+    }
+
+    @keyframes arrow-down {
+      0% {
+        border-color: #fff;
+        transform: translate(0, 0);
+      }
+      20% {
+        border-color: #fff;
+        transform: translate(15px, 15px);
+      }
+      20.1%,
+      100% {
+        border-color: $grayishBlue;
+      }
+    }
+  }
+
+  &__iconsComing {
+    // align-self: flex-end;
+    height: 7rem;
+
+    @include breakpoint-down(medium) {
+      padding-top: 0%;
+    }
+    @include breakpoint-up(large) {
+      padding-top: 10%;
+    }
+
+    // padding: 22.5% 0%;
+    // margin-top: 38%;
+
+    .icon3 {
+      padding-top: 10%;
+      padding-right: 50%;
+      @include breakpoint-up(large) {
+        padding-right: 60%;
+      }
+    }
+
+    .icon4 {
+      position: relative;
+      padding-top: 10%;
+    }
+
+    .arrow-down {
+      position: relative;
+      width: 50px;
+      height: 50px;
+      transform: rotate(136deg);
+    }
+
+    .arrow-down span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-right: 3px solid $white;
+      border-bottom: 3px solid $white;
+      animation: arrow-down 1s linear infinite;
+    }
+
+    .arrow-down span:nth-child(1) {
+      top: -30px;
+      left: -30px;
+      animation-delay: 0;
+    }
+
+    .arrow-down span:nth-child(2) {
+      top: -15px;
+      left: -15px;
+      animation-delay: 0.2s;
+    }
+
+    .arrow-down span:nth-child(3) {
+      top: 0;
+      left: 0;
+      animation-delay: 0.4s;
+    }
+
+    .arrow-down span:nth-child(4) {
+      top: 15px;
+      left: 15px;
+      animation-delay: 0.6s;
+    }
+
+    .arrow-down span:nth-child(5) {
+      top: 30px;
+      left: 30px;
+      animation-delay: 0.8s;
+    }
+
+    @keyframes arrow-down {
+      0% {
+        border-color: #fff;
+        transform: translate(0, 0);
+      }
+      20% {
+        border-color: #fff;
+        transform: translate(15px, 15px);
+      }
+      20.1%,
+      100% {
+        border-color: $grayishBlue;
+      }
+    }
+  }
+
+  &__budgetBg {
+    position: relative;
+    background: url("../../src/img/budgetBg.min.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 17.5rem;
+
+    @include breakpoint-up(medium) {
+      min-height: 25rem;
+
+      @include breakpoint-up(large) {
+        flex: 3;
+        order: 2;
+        height: 20rem;
+      }
+
+      &::before {
+        @include breakpoint-up(large) {
+          position: absolute;
+          height: 41rem;
+          background-image: url("../../src/img/aboutbanner.min.jpg");
+          background-repeat: no-repeat;
+          background-position: center top;
+          width: 100%;
+          background-size: 100%;
+          background-position: 0% 0%;
+        }
+      }
+    }
+  }
+  &__fleetBg {
+    position: relative;
+    background: url("../../src/img/fleetBg.min.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 17.5rem;
+
+    @include breakpoint-up(medium) {
+      min-height: 25rem;
+
+      @include breakpoint-up(large) {
+        flex: 3;
+        order: 2;
+        height: 20rem;
+      }
+
+      &::before {
+        @include breakpoint-up(large) {
+          position: absolute;
+          height: 41rem;
+          background-image: url("../../src/img/fleetBg.min.jpg");
+          background-repeat: no-repeat;
+          background-position: center top;
+          width: 100%;
+          background-size: 100%;
+          background-position: 0% 0%;
+        }
+      }
+    }
+  }
+
+  &__partnerBg {
+    position: relative;
+    background: url("../../src/img/bgHome.min.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 17.5rem;
+
+    @include breakpoint-up(medium) {
+      min-height: 25rem;
+
+      @include breakpoint-up(large) {
+        flex: 3;
+        order: 2;
+        height: 20rem;
+      }
+
+      &::before {
+        @include breakpoint-up(large) {
+          position: absolute;
+          height: 41rem;
+          background-image: url("../../src/img/aboutbanner.min.jpg");
+          background-repeat: no-repeat;
+          background-position: center top;
+          width: 100%;
+          background-size: 100%;
+          background-position: 0% 0%;
+        }
+      }
+    }
+  }
+
+  &__budgetTxt {
+    // background-color: rgba(0, 0, 0, 0.4);
+    color: $white;
+    text-align: center;
+
+    h1 {
+      color: $white;
+    }
+
+    h3 {
+      color: $white;
+    }
+
+    a {
+      color: $white;
+      cursor: pointer;
+    }
+
+    .cta-mobile {
+      img {
+        margin-bottom: 5%;
+      }
+      @include breakpoint-up(medium) {
+        margin: 0 auto;
+      }
+    }
+
+    .detailMain {
+      content: "";
+      width: 10px;
+      height: 17rem;
+      background-color: $white;
+      margin: 0 4rem;
+    }
+
+    @include breakpoint-up(large) {
+      width: 46%;
+      margin-top: 5%;
+      text-align: left;
+    }
+  }
+
+  &__fleetTxt {
+    background-color: rgba(0, 0, 0, 0.4);
+    color: $white;
+    text-align: center;
+    height: 82%;
+
+    @include breakpoint-down(medium) {
+      padding-top: 15%;
+    }
+
+    h1 {
+      color: $white;
+    }
+
+    h3 {
+      color: $white;
+    }
+
+    a {
+      color: $white;
+      cursor: pointer;
+    }
+
+    .cta-mobile {
+      img {
+        margin-bottom: 5%;
+      }
+      @include breakpoint-up(medium) {
+        margin: 0 auto;
+      }
+    }
+
+    .detailMain {
+      content: "";
+      width: 10px;
+      height: 17rem;
+      background-color: $white;
+      margin: 0 4rem;
+    }
+
+    @include breakpoint-up(large) {
+      width: 55%;
+      margin-top: 5%;
+      text-align: left;
+    }
+  }
+}
