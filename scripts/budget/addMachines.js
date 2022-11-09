@@ -144,6 +144,31 @@ openList.addEventListener("click", () => {
   addItens.innerHTML = "";
 });
 
+// Errors Handlers
+const handleErrorMsg = (message, accordionNumber) => {
+  const budgetSection = document.querySelector("[budgetSection]");
+  const error = document.createElement("div");
+  error.setAttribute("class", "alert danger-alert");
+  error.innerHTML = `
+        <p>${message}</p>
+        <a
+          class="closeBtn"
+          onclick="this.parentElement.style.display='none'"
+          >&times;
+        </a>
+    `;
+
+  budgetSection.appendChild(error);
+  error.style.display = "block";
+
+  const acc = document.querySelector(`[${accordionNumber}]`);
+  acc.style.border = "2px solid red";
+  acc.onclick = () => {
+    acc.style.border = "none";
+    error.style.display = "none";
+  };
+};
+
 // Budget Handlers
 let budget = document.querySelector("[budget]");
 
@@ -171,89 +196,19 @@ budget.addEventListener("click", async () => {
   const emailValue = email.value;
   const phoneValue = phone.value;
 
-  const budgetSection = document.querySelector("[budgetSection]");
   const emailValidRegex =
     /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
   if (list.length === 0) {
-    const error = document.createElement("div");
-    error.classList.add("error");
-    error.innerHTML = `
-        <span
-          class="closebtn"
-          onclick="this.parentElement.style.display='none'"
-          >&times;
-        </span>
-          
-          Selecione pelo menos 1 tipo de Maquinário!
-          
-          `;
-
-    window.scrollTo(0, 0);
-    budgetSection.appendChild(error);
-    error.style.display = "block";
-    const closebtn = error.querySelector(".closebtn");
-    const acc1 = document.querySelector("[accordion1]");
-    acc1.style.border = "4px solid red";
-    acc1.onclick = () => {
-      acc1.style.border = "none";
-      error.style.display = "none";
-    };
-    closebtn.addEventListener("click", () => {
-      error.style.display = "none";
-    });
+    handleErrorMsg("Selecione pelo menos 1 tipo de Maquinário!", "accordion1");
   } else if (
     nameValue.length < 1 ||
     emailValue.length < 1 ||
     phoneValue.length < 1
   ) {
-    const error = document.createElement("div");
-    error.classList.add("error");
-    error.innerHTML = `
-        <span
-          class="closebtn"
-          onclick="this.parentElement.style.display='none'"
-          >&times;</span
-          >
-          Informe seus Dados para Contato!`;
-
-    window.scrollTo(0, 0);
-    budgetSection.appendChild(error);
-    error.style.display = "block";
-    const acc3 = document.querySelector("[accordion3]");
-    acc3.style.border = "4px solid red";
-    acc3.onclick = () => {
-      acc3.style.border = "none";
-      error.style.display = "none";
-    };
-    const closebtn = error.querySelector(".closebtn");
-    closebtn.addEventListener("click", () => {
-      error.style.display = "none";
-    });
+    handleErrorMsg("Informe seus Dados para Contato!", "accordion3");
   } else if (!emailValue.match(emailValidRegex)) {
-    const error = document.createElement("div");
-    error.classList.add("error");
-    error.innerHTML = `
-        <span
-          class="closebtn"
-          onclick="this.parentElement.style.display='none'"
-          >&times;</span
-          >
-          Preencha um email Válido!`;
-
-    window.scrollTo(0, 0);
-    budgetSection.appendChild(error);
-    error.style.display = "block";
-    const acc3 = document.querySelector("[accordion3]");
-    acc3.style.border = "4px solid red";
-    acc3.onclick = () => {
-      acc3.style.border = "none";
-      error.style.display = "none";
-    };
-    const closebtn = error.querySelector(".closebtn");
-    closebtn.addEventListener("click", () => {
-      error.style.display = "none";
-    });
+    handleErrorMsg("Preencha um email Válido!", "accordion3");
   } else {
     // LOADING
     const budget = document.querySelector("[budget]");
@@ -284,82 +239,55 @@ budget.addEventListener("click", async () => {
     budgetToSend.email = emailValue;
     budgetToSend.phone = phoneValue;
 
-    const url =
-      "http://wpxlocacao.com.br/_wpxintranetapi/wpx-intranet-api/index.php";
-
-    Post(url, budgetToSend);
+    handleSubmitBudget(budgetToSend);
   }
 });
 
 // Request Handlers
-async function Post(url, body) {
-  console.log(body);
+const handleSubmitBudget = async (data) => {
+  console.log(data);
 
-  try {
-    const res = await fetch(url, {
-      headers: {
-        "Content-type": "application/json",
-      },
+  const res = await fetch(
+    "http://wpxlocacao.com.br/_wpxintranetapi/wpx-intranet-api/index.php",
+    {
       method: "POST",
-      // mode: "no-cors",
-      body: JSON.stringify(body),
-    });
-
-    if (res.status === 200) {
-      const myModal = document.querySelector("[myModal]");
-      const modalContent = document.querySelector("[modal-content]");
-      modalContent.innerHTML = `
-            <span
-              class="closebtn"
-              onclick="this.parentElement.style.display='none'"
-              >&times;</span
-              >
-              <h3>Orçamento criado com sucesso, deseja visualizar o PDF?</h3>
-              <button class="btn" onclick="printPdf()">
-                Visualizar
-              </button>
-    
-              `;
-
-      // window.scrollTo(0, 0);
-      myModal.style.display = "block";
-      const closebtn = modalContent.querySelector(".closebtn");
-      closebtn.addEventListener("click", () => {
-        location.replace("/views/confirm.html");
-      });
-      budget.innerHTML = `
-            <button>Solicitar orçamento</button>
-          `;
-    } else {
-      const error = document.createElement("div");
-      error.classList.add("error");
-      error.innerHTML = `
-          <span
-            class="closebtn"
-            onclick="this.parentElement.style.display='none'"
-            >&times;</span
-            >
-            Tivemos problemas durante a requisição.`;
-
-      window.scrollTo(0, 0);
-      budgetSection.appendChild(error);
-      error.style.display = "block";
-      const acc3 = document.querySelector("[accordion3]");
-      acc3.style.border = "4px solid red";
-      acc3.onclick = () => {
-        acc3.style.border = "none";
-        error.style.display = "none";
-      };
-      const closebtn = error.querySelector(".closebtn");
-      closebtn.addEventListener("click", () => {
-        error.style.display = "none";
-      });
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json",
+      },
     }
-  } catch (e) {
-    console.log(e);
-    alert("tivemos problemas, tente novamente");
+  );
+  console.log(res.status, res.response, res.ok);
+
+  if (res.status === 200) {
+    const myModal = document.querySelector("[myModal]");
+    const modalContent = document.querySelector("[modal-content]");
+    modalContent.innerHTML = `
+                  <span
+                    class="closebtn"
+                    onclick="this.parentElement.style.display='none'"
+                    >&times;</span
+                    >
+                    <h3>Orçamento criado com sucesso, deseja visualizar o PDF?</h3>
+                    <button class="btn" onclick="printPdf()">
+                      Visualizar
+                    </button>
+          
+                    `;
+
+    // window.scrollTo(0, 0);
+    myModal.style.display = "block";
+    const closebtn = modalContent.querySelector(".closebtn");
+    closebtn.addEventListener("click", () => {
+      location.replace("/views/confirm.html");
+    });
+    budget.innerHTML = `
+                  <button>Solicitar orçamento</button>
+                `;
+  } else {
+    handleErrorMsg("Tivemos problemas, tente novamente!");
   }
-}
+};
 
 // Print Budget PDF
 function printPdf() {

@@ -8456,43 +8456,43 @@ const setMachines = (results) => {
   const machines = results;
 
   const maquinasBtn = document.getElementById("maquinasBtn");
-  maquinasBtn.addEventListener("click", () => {
-    handleShowModels(machines, "MÁQUINAS");
+  maquinasBtn.addEventListener("click", async () => {
+    handleShowModels(machines.sort(), "MÁQUINAS");
   });
 
   const addMaquinas = document.getElementById("addMaquinas");
   addMaquinas.addEventListener("click", () => {
-    handleAddMachines(machines, "MÁQUINAS");
+    handleAddMachines(machines.sort(), "MÁQUINAS");
   });
 
   const caminhoesBtn = document.getElementById("caminhoesBtn");
   caminhoesBtn.addEventListener("click", () => {
-    handleShowModels(machines, "CAMINHÕES");
+    handleShowModels(machines.sort(), "CAMINHÕES");
   });
 
   const addCaminhoes = document.getElementById("addCaminhoes");
   addCaminhoes.addEventListener("click", () => {
-    handleAddMachines(machines, "CAMINHÕES");
+    handleAddMachines(machines.sort(), "CAMINHÕES");
   });
 
   const equipamentosBtn = document.getElementById("equipamentosBtn");
   equipamentosBtn.addEventListener("click", () => {
-    handleShowModels(machines, "EQUIPAMENTOS");
+    handleShowModels(machines.sort(), "EQUIPAMENTOS");
   });
 
   const addEquipamentos = document.getElementById("addEquipamentos");
   addEquipamentos.addEventListener("click", () => {
-    handleAddMachines(machines, "EQUIPAMENTOS");
+    handleAddMachines(machines.sort(), "EQUIPAMENTOS");
   });
 
   const passeioBtn = document.getElementById("passeioBtn");
   passeioBtn.addEventListener("click", () => {
-    handleShowModels(machines, "VEÍCULOS");
+    handleShowModels(machines.sort(), "VEÍCULOS");
   });
 
   const addPasseio = document.getElementById("addPasseio");
   addPasseio.addEventListener("click", () => {
-    handleAddMachines(machines, "VEÍCULOS");
+    handleAddMachines(machines.sort(), "VEÍCULOS");
   });
 };
 
@@ -8508,6 +8508,26 @@ const handleShowModels = (machines, modelType) => {
       li.innerText = model;
       models.appendChild(li);
     }
+  });
+
+  // Filter Data
+  const searchInput = document.getElementById("search");
+  const modelsList = Object.values(
+    document.querySelector("[models]").getElementsByTagName("li")
+  );
+  //   const parsedModels = modelsList.sort();
+
+  searchInput.addEventListener("keyup", (e) => {
+    let searchValue = e.target.value.toUpperCase();
+    const result = modelsList.forEach((model, i) => {
+      const value = model.innerText || model.innerHTML;
+      if (value.toUpperCase().indexOf(searchValue) > -1) {
+        modelsList[i].style.display = "";
+      } else {
+        modelsList[i].style.display = "none";
+      }
+    });
+    modelsList.innerHTML = result;
   });
 };
 
